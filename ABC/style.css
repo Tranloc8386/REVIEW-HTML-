@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+#form-btn {
+    display: flex;
+    background-color: rgb(208, 131, 198);
+    justify-content: center;
+    
+    
+}
+
+input, button {
+    width: 200px;
+   
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+
+}
+button{
+    width: 80px;
+    height: 30px;
+    background-color: chartreuse;
+    border-radius: 30px;
+}
+button:hover{
+    background-color: chocolate;
+
+}
