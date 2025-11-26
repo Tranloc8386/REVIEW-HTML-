@@ -11,18 +11,13 @@ function renderTodos() {
   todos.forEach((todo) => {
     const li = document.createElement("li");
     li.innerHTML = `
-    <span style="text-decoration: ${
-      todo.completed ? "line-through" : "none"
-    }">${todo.text}</span>
+    <span style="text-decoration: ${ todo.completed ? "line-through" : "none" }">${todo.text}</span>
     <div class="actions">
-        <button class="done" onclick="toggleDone('${
-          todo.id
-        }')">Hoan Thanh</button>
+        <button class="done" onclick="toggleDone('${todo.id}')">Hoan Thanh</button>
         <button class ="edit" onclick="editTodo('${todo.id}')">Sua</button>
         <button class ="delete" onclick="deleteTodo('${todo.id}')">Xoa</button>
     </div>
-
-    `;
+   `;
     listBtn.appendChild(li);
   });
 }
@@ -36,14 +31,18 @@ form.addEventListener("submit", (e) => {
   }
 
   if (editId) {
-    todos = todos.map((u) => (u.id === editId ? { ...u, text } : u));
+    todos = todos.map((u) => {
+      if (u.id === editId) {
+        return { ...u, text };
+      } else {
+        return u;
+      }
+    });
     editId = null;
     submit.textContent = "Them";
-  } else {
-    todos.push({
-      id: Math.random().toString(36).slice(2),
-      text,
-    });
+  } 
+  else {
+    todos.push({ id: Date.now(), text });
   }
   form.reset();
   renderTodos();
@@ -58,7 +57,7 @@ function editTodo(id) {
 }
 
 function toggleDone(id) {
-   todos = todos.map((u) =>
+  todos = todos.map((u) =>
     u.id === id ? { ...u, completed: !u.completed } : u
   );
   renderTodos();

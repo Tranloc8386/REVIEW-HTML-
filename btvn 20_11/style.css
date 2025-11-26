@@ -1,0 +1,35 @@
+body {
+
+    background-color: rgb(237, 234, 231);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#formBtn{
+    display: flex;
+}
+input{
+    display: flex;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    
+}
+h1{
+    display: flex;
+    align-items: center;
+}
+button{
+     margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    background-color: rgb(43, 11, 138);
+    color: aliceblue;
+}
+button:hover{
+    background-color: rgb(227, 50, 50);
+}

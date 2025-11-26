@@ -1,0 +1,41 @@
+<!-- 1. Quản lý Sản phẩm
+Yêu cầu:
+1. Tạo form nhập thông tin sản phẩm:
+    * Tên sản phẩm (text)
+    * Giá (number)
+2. Nút Thêm sản phẩm:
+    * Khi nhấn sẽ thêm sản phẩm vào table hiển thị danh sách sản phẩm
+3. Table hiển thị sản phẩm:
+    * Cột: STT, Tên, Giá, Hành động
+    * Hàng sản phẩm có nút Xóa để xóa sản phẩm -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form id="form">
+        <input type="text" name="name" id="product" placeholder="Nhap ten san pham..." required>
+        <input type="number" name="price" id="price" placeholder="Nhap gia..." required>
+        <button type="submit" id="submit">Them</button>
+    </form>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ten</th>
+                <th>Gia</th>
+                <th>Hanh Dong</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+            
+        </tbody>
+    </table>
+    <script src="./script.js"></script>
+  </body>
+</html>
